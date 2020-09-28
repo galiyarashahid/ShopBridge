@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Item";
+}
+<form id="newitem">
+    <div class="panel panel-default p-mt">
+        <div class="panel-heading"><h4>ADD ITEM</h4></div>
+        <div class="panel-body">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input id="name" name="name" required type="text" value="" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Price</label>
+                    <input id="price" name="price" required type="text" value="" onkeyup="checkDec(this);" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Desc</label>
+                    <textarea id="desc" name="desc" required value="" rows="3" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" id="btnsave">Submit</button>
+        </div>
+    </div>
+</form>
+<div class="table-responsive">
+    <table id="customers" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/Item.js")
+}
+
+

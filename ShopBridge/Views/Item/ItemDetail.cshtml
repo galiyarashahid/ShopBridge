@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Item Detail";
+}
+<section class="mb-5 p-pt">
+    <div class="row">
+        <h2>ITEM DETAIL</h2>
+        <table style="width:100%" class="table table-bordered table-hover">
+            <tr>
+                <th class="idtd">NAME:</th>
+                <td><label id="lblname"></label></td>
+            </tr>
+            <tr>
+                <th class="idtd">DESC:</th>
+                <td><label id="lbldesc"></label></td>
+            </tr>
+            <tr>
+                <th class="idtd">PRICE</th>
+                <td><label id="lblprice"></label></td>
+            </tr>
+        </table>
+        <a class="btn btn-primary" href="/item/new">Back to item</a>
+    </div>
+
+</section>
+<!--Section: Block Content-->
+@section scripts
+{
+    @Scripts.Render("~/Scripts/itemdetail.js")
+    <script type="text/javascript">
+        var routeId = @ViewContext.RouteData.Values["id"].ToString();
+        filldetail(routeId);
+    </script>
+}
+
